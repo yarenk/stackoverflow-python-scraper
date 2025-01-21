@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 import json
 
-def fetch_top_questions(tag='python', page_size=10):
+def fetch_top_questions(tag='python', page_size=100):
     """
     Fetches the most voted questions for a specific tag from Stack Overflow
     """
