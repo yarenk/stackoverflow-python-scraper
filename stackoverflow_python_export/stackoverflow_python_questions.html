@@ -1,0 +1,246 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stack Overflow Python Questions</title>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                line-height: 1.6;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+                color: #2c3e50;
+            }
+            .container {
+                background-color: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            h1 {
+                color: #2c3e50;
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+                font-size: 2.2em;
+            }
+            h2 {
+                color: #34495e;
+                margin-top: 30px;
+                font-size: 1.8em;
+            }
+            h3 {
+                color: #16a085;
+                font-size: 1.4em;
+            }
+            code {
+                background-color: #f8f9fa;
+                padding: 2px 4px;
+                border-radius: 4px;
+                font-family: Monaco, Consolas, monospace;
+                font-size: 0.9em;
+            }
+            pre {
+                background-color: #f8f9fa;
+                padding: 15px;
+                border-radius: 4px;
+                overflow-x: auto;
+                border: 1px solid #e9ecef;
+            }
+            a {
+                color: #3498db;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+                color: #2980b9;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid #eee;
+                margin: 30px 0;
+            }
+            .metadata {
+                color: #666;
+                font-style: italic;
+                margin-bottom: 20px;
+            }
+            .question-stats {
+                background-color: #f8f9fa;
+                padding: 10px;
+                border-radius: 4px;
+                margin: 10px 0;
+                border: 1px solid #e9ecef;
+            }
+            @media print {
+                body {
+                    background-color: white;
+                }
+                .container {
+                    box-shadow: none;
+                    padding: 0;
+                }
+                a {
+                    color: #2c3e50;
+                }
+            }
+            @media (max-width: 768px) {
+                body {
+                    padding: 10px;
+                }
+                .container {
+                    padding: 15px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Most Voted Python Questions on Stack Overflow</h1>
+<p><em>Generated on: 2025-01-21 12:59:28</em></p>
+<h2>1. What does the &quot;yield&quot; keyword do in Python?</h2>
+<p><strong>Vote count:</strong> 13033<br />
+<strong>Views:</strong> 3419836<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>What functionality does the <a href="https://docs.python.org/3/reference/simple_stmts.html#yield" rel="noreferrer"><code>yield</code></a> keyword in Python provide?</p>
+<p>For example, I'm trying to understand this code<sup><strong>1</strong></sup>:</p>
+<pre><code>def _get_child_candidates(self, distance, min_dist, max_dist):
+    if self._leftchild and distance - max_dist &lt; self._median:
+        yield self._leftchild
+    if self._rightchild and distance + max_dist &gt;= self._median:
+        yield self._rightchild  
+</code></pre>
+<p>And this is the caller:</p>
+<pre><code>result, candidates = [], [self]
+while candidates:
+    node = candidates.pop()
+    distance = node._get_dist(obj)
+    if distance &lt;= max_dist and distance &gt;= min_dist:
+        result.extend(node._values)
+    candidates.extend(node._get_child_candidates(distance, min_dist, max_dist))
+return result
+</code></pre>
+<p>What happens when the method <code>_get_child_candidates</code> is called?
+Is a list returned? A single element? Is it called again? When will subsequent calls stop?</p>
+
+<hr />
+<p><sub><br />
+1. This piece of code was written by Jochen Schulz (jrschulz), who made a great Python library for metric spaces. This is the link to the complete source: <a href="https://well-adjusted.de/~jrspieker/mspace/" rel="noreferrer">Module mspace</a>.</sub> </p>
+<hr />
+<h2>2. What does if <strong>name</strong> == &quot;<strong>main</strong>&quot;: do?</h2>
+<p><strong>Vote count:</strong> 8338<br />
+<strong>Views:</strong> 4825982<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/419163/what-does-if-name-main-do">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>What does this do, and why should one include the <code>if</code> statement?</p>
+<pre class="lang-py prettyprint-override"><code>if __name__ == &quot;__main__&quot;:
+    print(&quot;Hello, World!&quot;)
+</code></pre>
+<hr />
+<p><sub>If you are trying to close a question where someone should be using this idiom and isn't, consider closing as a duplicate of <a href="https://stackoverflow.com/questions/6523791">Why is Python running my module when I import it, and how do I stop it?</a> instead. For questions where someone simply hasn't called any functions, or incorrectly expects a function named <code>main</code> to be used as an entry point automatically, use <a href="https://stackoverflow.com/questions/17257631">Why doesn&#39;t the main() function run when I start a Python script? Where does the script start running?</a>.</sub></p>
+
+<hr />
+<h2>3. Does Python have a ternary conditional operator?</h2>
+<p><strong>Vote count:</strong> 8033<br />
+<strong>Views:</strong> 3031106<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/394809/does-python-have-a-ternary-conditional-operator">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>Is there a <a href="https://en.wikipedia.org/wiki/%3F:#Python" rel="noreferrer">ternary conditional operator</a> in Python?</p>
+
+<hr />
+<h2>4. What are metaclasses in Python?</h2>
+<p><strong>Vote count:</strong> 7460<br />
+<strong>Views:</strong> 1216436<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>What are <a href="https://docs.python.org/3/reference/datamodel.html#metaclasses" rel="noreferrer">metaclasses</a>? What are they used for?</p>
+
+<hr />
+<h2>5. How do I check whether a file exists without exceptions?</h2>
+<p><strong>Vote count:</strong> 7264<br />
+<strong>Views:</strong> 5809017<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/82831/how-do-i-check-whether-a-file-exists-without-exceptions">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>How do I check whether a file exists or not, without using the <a href="https://docs.python.org/3.6/reference/compound_stmts.html#try" rel="noreferrer"><code>try</code></a> statement?</p>
+
+<hr />
+<h2>6. How do I merge two dictionaries in a single expression in Python?</h2>
+<p><strong>Vote count:</strong> 7065<br />
+<strong>Views:</strong> 3513756<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/38987/how-do-i-merge-two-dictionaries-in-a-single-expression-in-python">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>I want to merge two dictionaries into a new dictionary.</p>
+<pre><code>x = {'a': 1, 'b': 2}
+y = {'b': 3, 'c': 4}
+z = merge(x, y)
+
+&gt;&gt;&gt; z
+{'a': 1, 'b': 3, 'c': 4}
+</code></pre>
+<p>Whenever a key <code>k</code> is present in both dictionaries, only the value <code>y[k]</code> should be kept.</p>
+
+<hr />
+<h2>7. How do I execute a program or call a system command?</h2>
+<p><strong>Vote count:</strong> 6235<br />
+<strong>Views:</strong> 5011019<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/89228/how-do-i-execute-a-program-or-call-a-system-command">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>How do I call an external command within Python as if I had typed it in a shell or command prompt?</p>
+
+<hr />
+<h2>8. How do I create a directory, and any missing parent directories?</h2>
+<p><strong>Vote count:</strong> 5767<br />
+<strong>Views:</strong> 3908813<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/273192/how-do-i-create-a-directory-and-any-missing-parent-directories">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>How do I create a directory at a given path, and also create any missing parent directories along that path? For example, the Bash command <code>mkdir -p /path/to/nested/directory</code> does this.</p>
+
+<hr />
+<h2>9. How to access the index value in a &#39;for&#39; loop?</h2>
+<p><strong>Vote count:</strong> 5589<br />
+<strong>Views:</strong> 4797820<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/522563/how-to-access-the-index-value-in-a-for-loop">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>How do I access the index while iterating over a sequence with a <code>for</code> loop?</p>
+<pre class="lang-py prettyprint-override"><code>xs = [8, 23, 45]
+
+for x in xs:
+    print(&quot;item #{} = {}&quot;.format(index, x))
+</code></pre>
+<p>Desired output:</p>
+<pre class="lang-none prettyprint-override"><code>item #1 = 8
+item #2 = 23
+item #3 = 45
+</code></pre>
+
+<hr />
+<h2>10. How do I make a flat list out of a list of lists?</h2>
+<p><strong>Vote count:</strong> 5443<br />
+<strong>Views:</strong> 4507685<br />
+<strong>Question link:</strong> <a href="https://stackoverflow.com/questions/952914/how-do-i-make-a-flat-list-out-of-a-list-of-lists">Stack Overflow</a></p>
+<h3>Question</h3>
+<p>I have a list of lists like</p>
+<pre><code>[
+    [1, 2, 3],
+    [4, 5, 6],
+    [7],
+    [8, 9]
+]
+</code></pre>
+<p>How can I flatten it to get <code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code>?</p>
+<hr />
+<p><sub>If your list of lists comes from a nested list comprehension, the problem can be solved more simply/directly by fixing the comprehension; please see <a href="https://stackoverflow.com/questions/1077015">How can I get a flat result from a list comprehension instead of a nested list?</a>.</sub></p>
+<p><sub>The most popular solutions here generally only flatten one &quot;level&quot; of the nested list. See <a href="https://stackoverflow.com/questions/2158395">Flatten an irregular (arbitrarily nested) list of lists</a> for solutions that completely flatten a deeply nested structure (recursively, in general).</sub></p>
+
+<hr />
+            <footer style="margin-top: 50px; text-align: center; color: #666;">
+                <p>Generated on 2025-01-21 13:02:09</p>
+            </footer>
+        </div>
+    </body>
+    </html>
+    
