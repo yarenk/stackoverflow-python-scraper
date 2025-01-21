@@ -9,7 +9,7 @@ A Python tool that fetches the most upvoted Python questions from Stack Overflow
 - Generates a responsive HTML version with modern styling
 - Creates a shareable ZIP package containing both formats
 - Mobile-friendly and print-ready output
-
+- Note: Don't forget to change page size to get more data.
 ## Installation
 
 1. Clone this repository:
